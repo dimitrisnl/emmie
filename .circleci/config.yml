@@ -1,22 +1,42 @@
-version: 2
-jobs:
-  build:
+executors:
+  node:
     docker:
-      - image: 'circleci/node:latest'
+      - image: circleci/node:10.13.0
+
+commands:
+  setup:
     steps:
       - checkout
       - run:
-          name: install
+          name: Install dependencies
           command: yarn install
-        run:
-          name: lint
-          command: yarn lint
-        run:
-          name: test
-          command: yarn test
-        run:
-          name: build
-          command: yarn build
+
+jobs:
+  build:
+    executor: node
+    steps:
+      - setup
       - run:
-          name: release
-          command: yarn run semantic-release || true
+          name: Lint
+          command: yarn lint
+      - run:
+          name: Build
+          command: yarn build
+
+  release:
+    executor: node
+    steps:
+      - setup
+      - run:
+          name: Create a new release
+          command: npx semantic-release
+
+workflows:
+  version: 2
+  pipeline:
+    jobs:
+      - build
+      - release:
+          filters:
+            branches:
+              only: master
