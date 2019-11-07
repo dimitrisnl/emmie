@@ -1,6 +1,6 @@
 {
   "name": "emmie",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "license": "MIT",
   "author": "Dimitrios Lytras",
   "main": "dist/index.js",
@@ -13,7 +13,8 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test",
-    "lint": "tsdx lint"
+    "lint": "tsdx lint",
+    "semantic-release": "semantic-release"
   },
   "peerDependencies": {},
   "husky": {
@@ -32,6 +33,11 @@
     "husky": "^3.0.9",
     "tsdx": "^0.11.0",
     "tslib": "^1.10.0",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.2",
+    "semantic-release": "^15.13.30"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dimitrisnl/emmie.git"
   }
 }
