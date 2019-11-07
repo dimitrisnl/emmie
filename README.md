@@ -19,10 +19,10 @@ yarn add emmie
 
 ## Usage
 
-```sh
+```js
 const emiter = emmie();
 
-emiteer('signup', () => console.log('should do something here'));
+emiter('signup', () => console.log('should do something here'));
 ```
 
 ## Run tests
