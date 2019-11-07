@@ -21,9 +21,17 @@ yarn add emmie
 ## Usage
 
 ```js
-const emiter = emmie();
+const emitter = emmie();
 
-emiter('signup', () => console.log('should do something here'));
+// Register an event listener
+const fn = () => {};
+emitter.on('signup', fn);
+
+// Trigger the event
+emitter.emit('signup');
+
+// Unregister the event listener
+emitter.off('signup', fn);
 ```
 
 ## Run tests
