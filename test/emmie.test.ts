@@ -27,31 +27,31 @@ describe('emmie', () => {
 
       expect(events).toHaveProperty('hello', [fn, fn2]);
     });
+  });
 
-    describe('off()', () => {
-      it('should remove an event listener', () => {
-        const fn = () => {};
+  describe('off()', () => {
+    it('should remove an event listener', () => {
+      const fn = () => {};
 
-        instance.on('hello', fn);
+      instance.on('hello', fn);
 
-        expect(events).toHaveProperty('hello', [fn]);
+      expect(events).toHaveProperty('hello', [fn]);
 
-        instance.off('hello', fn);
+      instance.off('hello', fn);
 
-        expect(events).not.toHaveProperty('hello', [fn]);
-      });
+      expect(events).not.toHaveProperty('hello', [fn]);
     });
+  });
 
-    describe('emit()', () => {
-      it('should invoke an event handler', () => {
-        const fn = jest.fn();
+  describe('emit()', () => {
+    it('should invoke an event handler', () => {
+      const fn = jest.fn();
 
-        instance.on('hello', fn);
-        instance.emit('hello');
-        instance.emit('hello');
+      instance.on('hello', fn);
+      instance.emit('hello');
+      instance.emit('hello');
 
-        expect(fn).toHaveBeenCalledTimes(2);
-      });
+      expect(fn).toHaveBeenCalledTimes(2);
     });
   });
 });
