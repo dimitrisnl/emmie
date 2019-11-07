@@ -8,6 +8,15 @@ jobs:
       - run:
           name: install
           command: yarn install
+        run:
+          name: lint
+          command: yarn lint
+        run:
+          name: test
+          command: yarn test
+        run:
+          name: build
+          command: yarn build
       - run:
           name: release
           command: yarn run semantic-release || true
