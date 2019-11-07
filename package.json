@@ -14,7 +14,8 @@
     "build": "tsdx build",
     "test": "tsdx test",
     "lint": "tsdx lint",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "commit": "git-cz"
   },
   "peerDependencies": {},
   "husky": {
@@ -30,14 +31,21 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.22",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
     "husky": "^3.0.9",
+    "semantic-release": "^15.13.30",
     "tsdx": "^0.11.0",
     "tslib": "^1.10.0",
-    "typescript": "^3.7.2",
-    "semantic-release": "^15.13.30"
+    "typescript": "^3.7.2"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/dimitrisnl/emmie.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   }
 }
