@@ -54,4 +54,4 @@ Give a ⭐️ if this project helped you!
 
 ---
 
-Have a great day!
+Have a great day! 😎
