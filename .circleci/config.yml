@@ -33,6 +33,9 @@ jobs:
     steps:
       - setup
       - run:
+          name: Build
+          command: yarn build
+      - run:
           name: Create a new release
           command: npx semantic-release
 
